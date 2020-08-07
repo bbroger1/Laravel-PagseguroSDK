@@ -34,7 +34,8 @@ class BoletoRequest extends FormRequest
             'bairro' => 'required',
             'rua' => 'required',
             'numero' => 'required',
-            'complemento' => 'required',
+            //'complemento' => 'required',
+            'hash' => 'required',
         ];
     }
 }

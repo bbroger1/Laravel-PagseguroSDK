@@ -28,6 +28,7 @@ class PedidoController extends Controller
         $valor = $response->getGrossAmount();
         $id = $response->getCode();
         $link = $response->getPaymentLink();
+        dd($link);
     }
 
     public function checkout(Request $request)

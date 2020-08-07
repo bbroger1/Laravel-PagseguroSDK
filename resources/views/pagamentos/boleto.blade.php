@@ -143,7 +143,7 @@
                                 @enderror
                             </div>
 
-                            <div class="col-2 form-group">
+                            {{-- <div class="col-2 form-group">
                                 <label for="complemento">Complemento</label>
                                 <input id="complemento" type="text"
                                     class="form-control @error('complemento') is-invalid @enderror" name="complemento"
@@ -154,11 +154,13 @@
                                     <strong>{{ $message }}</strong>
                                 </span>
                                 @enderror
-                            </div>
+                            </div> --}}
                         </div>
 
                         <div class="row justify-content-center">
                             <div class="col-md-4 form-group">
+                                <input type="text" class="form-control" name="hash" id="hash"
+                                    readonly="true">
                                 <button id="submit" name="submit" class="form-control btn btn-primary btn-lg"
                                     dusk="confirmar-button">Confirmar
                                     Pagamento</button>
@@ -173,6 +175,7 @@
 @endsection
 
 @section('scripts')
+<script type="text/javascript" src="https://stc.pagseguro.uol.com.br/pagseguro/api/v2/checkout/pagseguro.directpayment.js"></script>
 <script>
     $(function () {
         $('#cpf').mask('000.000.000-00');
@@ -252,6 +255,7 @@
         $("#formPagamento").submit(function() {
             $("#cpf").unmask();
             $("#cep").unmask();
+            $("#hash").val(PagSeguroDirectPayment.getSenderHash());
         });
     });
 </script>

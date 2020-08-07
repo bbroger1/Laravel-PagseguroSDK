@@ -55,7 +55,7 @@ class PedidoService
             'CPF',
             $dadosPedido['cpf']
         );
-        //$boleto->setSender()->setHash('3dc25e8a7cb3fd3104e77ae5ad0e7df04621caa33e300b27aeeb9ea1adf1a24f');
+        $boleto->setSender()->setHash($dadosPedido['hash']);
         //$boleto->setSender()->setIp('127.0.0.0');
         /*$boleto->setShipping()->setAddress()->withParameters(
             $dadosPedido['rua'],

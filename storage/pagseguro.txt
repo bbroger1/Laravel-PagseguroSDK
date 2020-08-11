@@ -134,3 +134,75 @@
 11/08/2020 12:40:29 PagSeguro.Session[info]: Begin
 11/08/2020 12:40:31 PagSeguro.Session[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=thifanynicastro%40hotmail.com&token=DE8704B15F02455E9FC5EE86CE8AEF61
 11/08/2020 12:40:33 PagSeguro.Session[info]: Session ID: edafad540dfe416987370d6c6fccc793
+11/08/2020 15:59:14 PagSeguro.Session[info]: Begin
+11/08/2020 15:59:15 PagSeguro.Session[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=thifanynicastro%40hotmail.com&token=DE8704B15F02455E9FC5EE86CE8AEF61
+11/08/2020 15:59:16 PagSeguro.Session[info]: Session ID: 630f931ea93a4b1ea58ab6149e11a417
+11/08/2020 18:02:08 PagSeguro.Session[info]: Begin
+11/08/2020 18:02:08 PagSeguro.Session[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=thifanynicastro%40hotmail.com&token=DE8704B15F02455E9FC5EE86CE8AEF61
+11/08/2020 18:02:10 PagSeguro.Session[info]: Session ID: 374789e295e64c93b69e63b57dce4120
+11/08/2020 18:17:49 PagSeguro.Session[info]: Begin
+11/08/2020 18:17:49 PagSeguro.Session[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=thifanynicastro%40hotmail.com&token=DE8704B15F02455E9FC5EE86CE8AEF61
+11/08/2020 18:17:50 PagSeguro.Session[info]: Session ID: 2c4d91c3ed5c420f82c17f2665f620ad
+11/08/2020 18:18:53 PagSeguro.Session[info]: Begin
+11/08/2020 18:18:53 PagSeguro.Session[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=thifanynicastro%40hotmail.com&token=DE8704B15F02455E9FC5EE86CE8AEF61
+11/08/2020 18:18:54 PagSeguro.Session[info]: Session ID: 54dbfe0092f041af9ed45d8bccf8b9a9
+11/08/2020 18:20:45 PagSeguro.Session[info]: Begin
+11/08/2020 18:20:45 PagSeguro.Session[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=thifanynicastro%40hotmail.com&token=DE8704B15F02455E9FC5EE86CE8AEF61
+11/08/2020 18:20:46 PagSeguro.Session[info]: Session ID: 846192aa89d447adb6a4103c541324b4
+11/08/2020 18:25:56 PagSeguro.Session[info]: Begin
+11/08/2020 18:25:56 PagSeguro.Session[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=thifanynicastro%40hotmail.com&token=DE8704B15F02455E9FC5EE86CE8AEF61
+11/08/2020 18:25:57 PagSeguro.Session[info]: Session ID: e09df06725b8416280b0ba3c5d439fdc
+11/08/2020 18:26:41 PagSeguro.Session[info]: Begin
+11/08/2020 18:26:41 PagSeguro.Session[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=thifanynicastro%40hotmail.com&token=DE8704B15F02455E9FC5EE86CE8AEF61
+11/08/2020 18:26:41 PagSeguro.Session[info]: Session ID: 91b3421cbd1a432ab7875d6f6e334b78
+11/08/2020 18:41:26 PagSeguro.Session[info]: Begin
+11/08/2020 18:41:27 PagSeguro.Session[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=thifanynicastro%40hotmail.com&token=DE8704B15F02455E9FC5EE86CE8AEF61
+11/08/2020 18:41:28 PagSeguro.Session[info]: Session ID: 2af31f56a6424012ab272bbcd6d512c0
+11/08/2020 18:41:48 PagSeguro.Session[info]: Begin
+11/08/2020 18:41:48 PagSeguro.Session[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=thifanynicastro%40hotmail.com&token=DE8704B15F02455E9FC5EE86CE8AEF61
+11/08/2020 18:41:49 PagSeguro.Session[info]: Session ID: ad931eba17104b259e544a6f964416a3
+11/08/2020 18:42:15 PagSeguro.Session[info]: Begin
+11/08/2020 18:42:15 PagSeguro.Session[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=thifanynicastro%40hotmail.com&token=DE8704B15F02455E9FC5EE86CE8AEF61
+11/08/2020 18:42:16 PagSeguro.Session[info]: Session ID: 63d5e7539b09468bb72d6cf8b93c7fbd
+11/08/2020 18:42:31 PagSeguro.Session[info]: Begin
+11/08/2020 18:42:31 PagSeguro.Session[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=thifanynicastro%40hotmail.com&token=DE8704B15F02455E9FC5EE86CE8AEF61
+11/08/2020 18:42:32 PagSeguro.Session[info]: Session ID: 91ffea6e2f774da88e42b1e999581017
+11/08/2020 18:43:32 PagSeguro.Session[info]: Begin
+11/08/2020 18:43:32 PagSeguro.Session[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=thifanynicastro%40hotmail.com&token=DE8704B15F02455E9FC5EE86CE8AEF61
+11/08/2020 18:43:32 PagSeguro.Session[info]: Session ID: a317cdb0576a4007b17fbde43aac4f14
+11/08/2020 18:44:27 PagSeguro.Session[info]: Begin
+11/08/2020 18:44:27 PagSeguro.Session[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=thifanynicastro%40hotmail.com&token=DE8704B15F02455E9FC5EE86CE8AEF61
+11/08/2020 18:44:28 PagSeguro.Session[info]: Session ID: a10d499c41964cb090e3557df8008ba5
+11/08/2020 18:45:29 PagSeguro.Session[info]: Begin
+11/08/2020 18:45:29 PagSeguro.Session[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=thifanynicastro%40hotmail.com&token=DE8704B15F02455E9FC5EE86CE8AEF61
+11/08/2020 18:45:30 PagSeguro.Session[info]: Session ID: 52dfd710976f4f01baedba20a58e82b4
+11/08/2020 18:48:16 PagSeguro.Session[info]: Begin
+11/08/2020 18:48:17 PagSeguro.Session[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=thifanynicastro%40hotmail.com&token=DE8704B15F02455E9FC5EE86CE8AEF61
+11/08/2020 18:48:17 PagSeguro.Session[info]: Session ID: 7a01566f5b2e49a08f6fbade0360b358
+11/08/2020 18:49:49 PagSeguro.Session[info]: Begin
+11/08/2020 18:49:49 PagSeguro.Session[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=thifanynicastro%40hotmail.com&token=DE8704B15F02455E9FC5EE86CE8AEF61
+11/08/2020 18:49:50 PagSeguro.Session[info]: Session ID: 0367d055c6e84ad8a122dc75898eb8b4
+11/08/2020 19:03:50 PagSeguro.Session[info]: Begin
+11/08/2020 19:03:50 PagSeguro.Session[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=thifanynicastro%40hotmail.com&token=DE8704B15F02455E9FC5EE86CE8AEF61
+11/08/2020 19:03:51 PagSeguro.Session[info]: Session ID: d0a342afefb64fc89c6924f2f8454e86
+11/08/2020 19:04:50 PagSeguro.Session[info]: Begin
+11/08/2020 19:04:50 PagSeguro.Session[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=thifanynicastro%40hotmail.com&token=DE8704B15F02455E9FC5EE86CE8AEF61
+11/08/2020 19:04:50 PagSeguro.Session[info]: Session ID: 206fd222412f4189b937fb2dc7b08471
+11/08/2020 19:05:13 PagSeguro.Session[info]: Begin
+11/08/2020 19:05:13 PagSeguro.Session[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=thifanynicastro%40hotmail.com&token=DE8704B15F02455E9FC5EE86CE8AEF61
+11/08/2020 19:05:14 PagSeguro.Session[info]: Session ID: 31e1d3b9ae31469aa0d04956351e4e18
+11/08/2020 19:07:18 PagSeguro.Session[info]: Begin
+11/08/2020 19:07:18 PagSeguro.Session[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=thifanynicastro%40hotmail.com&token=DE8704B15F02455E9FC5EE86CE8AEF61
+11/08/2020 19:07:19 PagSeguro.Session[info]: Session ID: 05dd16ae403a4c4eab566722be4e6339
+11/08/2020 19:07:46 PagSeguro.Session[info]: Begin
+11/08/2020 19:07:46 PagSeguro.Session[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=thifanynicastro%40hotmail.com&token=DE8704B15F02455E9FC5EE86CE8AEF61
+11/08/2020 19:07:46 PagSeguro.Session[info]: Session ID: 17e522d730ba450d86ce8162304c5195
+11/08/2020 19:09:50 PagSeguro.Session[info]: Begin
+11/08/2020 19:09:50 PagSeguro.Session[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=thifanynicastro%40hotmail.com&token=DE8704B15F02455E9FC5EE86CE8AEF61
+11/08/2020 19:09:51 PagSeguro.Session[info]: Session ID: e6f543b789d14fa799cac225c8bd0590
+11/08/2020 19:11:10 PagSeguro.Session[info]: Begin
+11/08/2020 19:11:10 PagSeguro.Session[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=thifanynicastro%40hotmail.com&token=DE8704B15F02455E9FC5EE86CE8AEF61
+11/08/2020 19:11:10 PagSeguro.Session[info]: Session ID: 95bdfb5c7a6246e3af06507df3dc77a6
+11/08/2020 19:13:58 PagSeguro.Session[info]: Begin
+11/08/2020 19:13:58 PagSeguro.Session[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=thifanynicastro%40hotmail.com&token=DE8704B15F02455E9FC5EE86CE8AEF61
+11/08/2020 19:13:59 PagSeguro.Session[info]: Session ID: b9e36d6658504dbd8ecc2cde8f35b6aa

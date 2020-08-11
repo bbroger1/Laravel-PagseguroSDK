@@ -2,6 +2,10 @@ let cardNumber = document.querySelector('input[name=card_number]');
 let spanBrand  = document.querySelector('span.brand');
 
 cardNumber.addEventListener('keyup', function(){
+    $('#parcelas option').each(function() {
+            $(this).remove();
+    });
+
     if(cardNumber.value.length >= 6) {
         PagSeguroDirectPayment.getBrand({
             cardBin: cardNumber.value.substr(0, 6),
@@ -10,14 +14,11 @@ cardNumber.addEventListener('keyup', function(){
                 spanBrand.innerHTML = imgFlag;
                 document.querySelector('input[name=card_brand]').value = res.brand.name;
 
-                //getInstallments(amoutTransaction, res.brand.name);
+                getInstallments(2999, res.brand.name);
             },
             error: function(err) {
                 console.log(err);
             },
-            complete: function(res) {
-                //console.log('Complete', res);
-            }
         });
     }
 });

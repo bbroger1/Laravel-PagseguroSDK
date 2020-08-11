@@ -97,9 +97,10 @@ class PedidoService
         );
         $creditCard->setSender()->setDocument()->withParameters(
             'CPF',
-            $dadosPedido['cpf']
+            '45320334893'
         );
         //$creditCard->setSender()->setHash($dadosPedido['hash']); //só pra production
+
         //$creditCard->setSender()->setIp('127.0.0.0');
         // $creditCard->setShipping()->setAddress()->withParameters(
         //     'Av. Brig. Faria Lima',
@@ -123,8 +124,12 @@ class PedidoService
         //     'apto. 114'
         // );
 
-        $creditCard->setToken('2ed34e61b24d4ea8ae872c66a512525c');
-        $creditCard->setInstallment()->withParameters(1, '30.00');
+        $creditCard->setToken($dadosPedido['encryptedCard']);
+
+        list($quantity, $installmentAmount) = explode('|', $this->cardInfo['installment']);
+        $installmentAmount = number_format($installmentAmount, 2, '.', '');
+
+        $creditCard->setInstallment()->withParameters($quantity, $installmentAmount);
         $creditCard->setHolder()->setBirthdate('01/10/1979');
         $creditCard->setHolder()->setName('João Comprador'); // Equals in Credit Card
         $creditCard->setHolder()->setPhone()->withParameters(

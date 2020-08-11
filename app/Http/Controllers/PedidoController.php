@@ -23,8 +23,13 @@ class PedidoController extends Controller
 
     public function exibirCartao()
     {
-        $this->makePagSeguroSession();
-        return view('pagamentos.cartao');
+        try {
+            $this->makePagSeguroSession();
+            return view('pagamentos.cartao');
+        } catch (\Exception $e) {
+            session()->forget('pagseguro_session_code');
+            redirect()->route('pagamentos.index');
+        }
     }
 
     public function processarBoleto(BoletoRequest $request)
@@ -49,33 +54,11 @@ class PedidoController extends Controller
 
     public function makePagSeguroSession()
     {
-        if(!session()->has('pagseguro_session_code')) {
-			$sessionCode = \PagSeguro\Services\Session::create(
-				\PagSeguro\Configuration\Configure::getAccountCredentials()
-			);
-			return session()->put('pagseguro_session_code', $sessionCode->getResult());
-		}
-    }
-
-    public function checkout(Request $request)
-    {
-        $payment = new \PagSeguro\Domains\Requests\Payment();
-        $payment->addItems()->withParameters(
-            $request->get('itemId1'),
-            $request->get('itemDescription1'),
-            $request->get('itemAmount1'),
-            $request->get('itemPrice1')
-        );
-        $payment->setCurrency("BRL");
-        $payment->setReference("LIBPHP000001");
         try {
-            $onlyCheckoutCode = true;
-            $result = $payment->register(
-                \PagSeguro\Configuration\Configure::getAccountCredentials(),
-                $onlyCheckoutCode
+            $sessionCode = \PagSeguro\Services\Session::create(
+                \PagSeguro\Configuration\Configure::getAccountCredentials()
             );
-            $code = $result->getCode();
-            return response()->json($code, 201);
+            session()->put('pagseguro_session_code', $sessionCode->getResult());
         } catch (Exception $e) {
             die($e->getMessage());
         }

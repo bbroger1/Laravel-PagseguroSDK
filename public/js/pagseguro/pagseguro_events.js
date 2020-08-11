@@ -2,10 +2,6 @@ let cardNumber = document.querySelector('input[name=card_number]');
 let spanBrand  = document.querySelector('span.brand');
 
 cardNumber.addEventListener('keyup', function(){
-    $('#parcelas option').each(function() {
-            $(this).remove();
-    });
-
     if(cardNumber.value.length >= 6) {
         PagSeguroDirectPayment.getBrand({
             cardBin: cardNumber.value.substr(0, 6),

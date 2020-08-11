@@ -18,6 +18,7 @@ Route::get('/', function () {
 });
 
 Route::get('cep/{cep}', 'CepController')->name('cep');
+Route::post('/status', 'PedidoController@receberStatus');
 
 Auth::routes();
 

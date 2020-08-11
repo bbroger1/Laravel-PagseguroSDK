@@ -80,17 +80,17 @@ class PedidoService
     public function efetuarPagamentoCartao($dadosPedido)
     {
         $creditCard = new \PagSeguro\Domains\Requests\DirectPayment\CreditCard();
-        $creditCard->setReceiverEmail('vendedor@lojamodelo.com.br');
+        $creditCard->setReceiverEmail('thifanynicastro@hotmail.com');
         $creditCard->setReference("LIBPHP000001");
         $creditCard->setCurrency("BRL");
         $creditCard->addItems()->withParameters(
             '0001',
             'Notebook prata',
-            2,
-            10.00
+            1,
+            2999.00
         );
-        $boleto->setSender()->setName($dadosPedido['nome']);
-        $boleto->setSender()->setEmail('c89975035603679169701@sandbox.pagseguro.com.br');
+        $creditCard->setSender()->setName('Jose da Silva');
+        $creditCard->setSender()->setEmail('c89975035603679169701@sandbox.pagseguro.com.br');
         $creditCard->setSender()->setPhone()->withParameters(
             11,
             56273440
@@ -102,35 +102,35 @@ class PedidoService
         //$creditCard->setSender()->setHash($dadosPedido['hash']); //só pra production
 
         //$creditCard->setSender()->setIp('127.0.0.0');
-        // $creditCard->setShipping()->setAddress()->withParameters(
-        //     'Av. Brig. Faria Lima',
-        //     '1384',
-        //     'Jardim Paulistano',
-        //     '01452002',
-        //     'São Paulo',
-        //     'SP',
-        //     'BRA',
-        //     'apto. 114'
-        // );
+        $creditCard->setShipping()->setAddress()->withParameters(
+            'Av. Brig. Faria Lima',
+            '1384',
+            'Jardim Paulistano',
+            '01452002',
+            'São Paulo',
+            'SP',
+            'BRA',
+            'apto. 114'
+        );
 
-        // $creditCard->setBilling()->setAddress()->withParameters(
-        //     'Av. Brig. Faria Lima',
-        //     '1384',
-        //     'Jardim Paulistano',
-        //     '01452002',
-        //     'São Paulo',
-        //     'SP',
-        //     'BRA',
-        //     'apto. 114'
-        // );
+        $creditCard->setBilling()->setAddress()->withParameters(
+            'Av. Brig. Faria Lima',
+            '1384',
+            'Jardim Paulistano',
+            '01452002',
+            'São Paulo',
+            'SP',
+            'BRA',
+            'apto. 114'
+        );
 
         $creditCard->setToken($dadosPedido['encryptedCard']);
 
-        list($quantity, $installmentAmount) = explode('|', $this->cardInfo['installment']);
+        list($quantity, $installmentAmount) = explode('|', $dadosPedido['parcelas']);
         $installmentAmount = number_format($installmentAmount, 2, '.', '');
 
         $creditCard->setInstallment()->withParameters($quantity, $installmentAmount);
-        $creditCard->setHolder()->setBirthdate('01/10/1979');
+        //$creditCard->setHolder()->setBirthdate('01/10/1979');
         $creditCard->setHolder()->setName('João Comprador'); // Equals in Credit Card
         $creditCard->setHolder()->setPhone()->withParameters(
             11,
@@ -138,7 +138,7 @@ class PedidoService
         );
         $creditCard->setHolder()->setDocument()->withParameters(
             'CPF',
-            'insira um numero de CPF valido'
+            '45320334893'
         );
         $creditCard->setMode('DEFAULT');
 
@@ -147,6 +147,22 @@ class PedidoService
                 \PagSeguro\Configuration\Configure::getAccountCredentials()
             );
             return $response;
+        } catch (Exception $e) {
+            die($e->getMessage());
+        }
+    }
+
+    function consultaNotificacao()
+    {
+        try {
+            if (\PagSeguro\Helpers\Xhr::hasPost()) {
+                $response = \PagSeguro\Services\Transactions\Notification::check(
+                    \PagSeguro\Configuration\Configure::getAccountCredentials()
+                );
+                return $response;
+            } else {
+                throw new \InvalidArgumentException($_POST);
+            }
         } catch (Exception $e) {
             die($e->getMessage());
         }

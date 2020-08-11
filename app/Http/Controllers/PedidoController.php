@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Services\PedidoService;
 use App\Http\Requests\BoletoRequest;
 use App\Http\Requests\CartaoRequest;
+use Illuminate\Support\Facades\Storage;
 
 class PedidoController extends Controller
 {
@@ -62,5 +63,19 @@ class PedidoController extends Controller
         } catch (Exception $e) {
             die($e->getMessage());
         }
+    }
+
+    public function receberStatus(Request $request)
+    {
+        $code = $request->notificationCode;
+        Storage::put('code', $code);
+        $notification = $this->pedidoService->consultaNotificacao();
+        $reference = base64_decode($notification->getReference());
+        Storage::put('reference', $reference);
+        //Storage::put('request', $request);
+
+	    //$pedido = Pedido::where('uuid', $reference)->firstOrFail();
+	    //$pedido->pagseguro_status = $notification->getStatus();
+	    //$pedido->save();
     }
 }

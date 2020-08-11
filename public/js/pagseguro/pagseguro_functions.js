@@ -45,10 +45,13 @@ function getInstallments(amount, brand) {
 }
 
 function drawSelectInstallments(installments) {
+    $('#parcelas option').each(function() {
+            $(this).remove();
+    });
     for(let l of installments) {
         $('#parcelas').append($('<option>', {
             value: l.quantity+"|"+l.installmentAmount,
-            text: l.quantity+"x de "+l.installmentAmount+" - Total fica "+l.totalAmount
+            text: l.quantity+"x de "+l.installmentAmount+" c/juros "+l.totalAmount
         }));
     }
 }

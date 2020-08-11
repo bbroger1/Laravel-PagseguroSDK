@@ -31,6 +31,7 @@ class CartaoRequest extends FormRequest
             'card_cvv' => 'required',
             'parcelas' => 'required',
             'encryptedCard' => 'required',
+            'hash' => 'required',
         ];
     }
 }

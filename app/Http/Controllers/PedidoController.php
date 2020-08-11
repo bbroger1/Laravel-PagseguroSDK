@@ -21,6 +21,12 @@ class PedidoController extends Controller
         return view('pagamentos.boleto');
     }
 
+    public function exibirCartao()
+    {
+        $this->makePagSeguroSession();
+        return view('pagamentos.cartao');
+    }
+
     public function processarBoleto(BoletoRequest $request)
     {
         $dadosPedido = $request->validated();
@@ -29,6 +35,26 @@ class PedidoController extends Controller
         $id = $response->getCode();
         $link = $response->getPaymentLink();
         dd($link);
+    }
+
+    public function processarCartao(CartaoRequest $request)
+    {
+        $dadosPedido = $request->validated();
+        $response = $this->pedidoService->efetuarPagamentoCartao($dadosPedido);
+        // $valor = $response->getGrossAmount();
+        // $id = $response->getCode();
+        // $link = $response->getPaymentLink();
+        dd($response);
+    }
+
+    public function makePagSeguroSession()
+    {
+        if(!session()->has('pagseguro_session_code')) {
+			$sessionCode = \PagSeguro\Services\Session::create(
+				\PagSeguro\Configuration\Configure::getAccountCredentials()
+			);
+			return session()->put('pagseguro_session_code', $sessionCode->getResult());
+		}
     }
 
     public function checkout(Request $request)

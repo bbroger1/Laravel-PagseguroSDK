@@ -13,7 +13,7 @@ class CartaoRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,13 @@ class CartaoRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'card_holder' => 'required',
+            'card_number' => 'required',
+            'card_month' => 'required',
+            'card_year' => 'required',
+            'card_cvv' => 'required',
+            'parcelas' => 'required',
+            'encryptedCard' => 'required',
         ];
     }
 }

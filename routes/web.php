@@ -24,6 +24,8 @@ Auth::routes();
 Route::prefix('pagamento')->name('pagamento.')->group(function () {
     Route::get('/boleto', 'PedidoController@exibirBoleto')->name('boleto');
     Route::post('/boleto/processamento', 'PedidoController@processarBoleto')->name('processamento.boleto');
+    Route::get('/cartao', 'PedidoController@exibirCartao')->name('cartao');
+    Route::post('/cartao/processamento', 'PedidoController@processarCartao')->name('processamento.cartao');
 });
 
 Auth::routes();

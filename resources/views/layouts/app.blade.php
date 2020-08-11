@@ -16,7 +16,6 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/custom.css') }}" rel="stylesheet">
 </head>
 
 <body>
@@ -84,15 +83,6 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
-    <script>
-        $(function () {
-                $('[data-toggle="tooltip"]').tooltip();
-    
-                $("form").submit(function( event ) {
-                    $(".spinner").fadeIn();
-                });
-            });
-    </script>
     @yield('scripts')
 </body>
 

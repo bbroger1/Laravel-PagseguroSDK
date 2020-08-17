@@ -1,3 +1,11 @@
+function limpar() {
+    $('#parcelas option').each(function() {
+        $(this).remove();
+    });
+    $('span.brand').html("");
+    $('#card_brand').val("");
+}
+
 function criptografar() {
     PagSeguroDirectPayment.createCardToken({
         cardNumber:         $('#card_number').val(),
@@ -12,23 +20,39 @@ function criptografar() {
         error: function(err) {
             for(let i in err.errors) {
                 console.log(errorsMapPagseguroJS(i));
-                document.querySelector('div.msg').innerHTML = showErrorMessages(errorsMapPagseguroJS(i));
+                $('#mensagem_erro').html(showErrorMessages(errorsMapPagseguroJS(i)));
             }
         }
     });
 }
 
-function getBrand() {
+function getBrand(amount) {
     PagSeguroDirectPayment.getBrand({
         cardBin: $('#card_number').val().substr(0, 6),
         success: function(res) {
+            let imgFlag = `<img src="https://stc.pagseguro.uol.com.br/public/img/payment-methods-flags/68x30/${res.brand.name}.png">`;
+            $('span.brand').html(imgFlag);
             $('#card_brand').val(res.brand.name);
+
+            getInstallments(amount, res.brand.name);
         },
         error: function(err) {
             console.log(err);
         },
     });
 }
+
+// function getBrand() {
+//     PagSeguroDirectPayment.getBrand({
+//         cardBin: $('#card_number').val().substr(0, 6),
+//         success: function(res) {
+//             $('#card_brand').val(res.brand.name);
+//         },
+//         error: function(err) {
+//             console.log(err);
+//         },
+//     });
+// }
 
 function getInstallments(amount, brand) {
     PagSeguroDirectPayment.getInstallments({

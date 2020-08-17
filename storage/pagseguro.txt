@@ -2,3 +2,6 @@
 11/08/2020 21:32:11 PagSeguro.Transactions.Notification[info]: Begin
 11/08/2020 21:32:11 PagSeguro.Transactions.Notification[info]: GET: https://ws.sandbox.pagseguro.uol.com.br/v3/transactions/notifications/5B8E2D012E5A2E5A7D6224656FA3504492AF?email=thifanynicastro%40hotmail.com&token=DE8704B15F02455E9FC5EE86CE8AEF61
 11/08/2020 21:32:12 PagSeguro.Transactions.Notification[info]: Date: 2020-08-11T17:44:05.000-03:00, Code: 68007CE1-1BA2-4F76-8B25-9E971FDEAE64
+12/08/2020 12:56:27 PagSeguro.Session[info]: Begin
+12/08/2020 12:56:28 PagSeguro.Session[info]: POST: https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=thifanynicastro%40hotmail.com&token=DE8704B15F02455E9FC5EE86CE8AEF61
+12/08/2020 12:56:30 PagSeguro.Session[info]: Session ID: ff13226d88fe44b59ce99cd52e4eccd0

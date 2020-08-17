@@ -68,10 +68,12 @@ class PedidoController extends Controller
     public function receberStatus(Request $request)
     {
         $code = $request->notificationCode;
-        Storage::put('code', $code);
-        $notification = $this->pedidoService->consultaNotificacao();
-        $reference = base64_decode($notification->getReference());
-        Storage::put('reference', $reference);
+        $response = $this->pedidoService->consultaNotificacao();
+        $reference = $response->getReference();
+        $valor = $response->getGrossAmount();
+        $id = $response->getCode();
+        $status = $response->getStatus();
+        Storage::put('reference', $status." - ".$reference." - ".$valor." - ".$id);
         //Storage::put('request', $request);
 
 	    //$pedido = Pedido::where('uuid', $reference)->firstOrFail();

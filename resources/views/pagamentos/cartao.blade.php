@@ -97,26 +97,41 @@
 @endsection
 
 @section('scripts')
-    <script src="https://stc.sandbox.pagseguro.uol.com.br/pagseguro/api/v2/checkout/pagseguro.directpayment.js"></script>
+<script src="https://stc.sandbox.pagseguro.uol.com.br/pagseguro/api/v2/checkout/pagseguro.directpayment.js"></script>
 
-    <script>
-        $(function() {
-            const sessionId = '{{session('pagseguro_session_code')}}';
-            const amountTransaction = 2999.00;
-            PagSeguroDirectPayment.setSessionId(sessionId);
+<script>
+$(function() {
+    setInterval(function(){ location.reload(); }, 300000); //refresh porque a session do pg expira
 
-            $("#enviar").click(function(e) {
-                //e.preventDefault();
-                criptografar();
-                $("#hash").val(PagSeguroDirectPayment.getSenderHash());
-                setTimeout( function () { 
-                    $("#formPagamento").submit();
-                }, 3000);
-            });
-        });
+    $("#cpf").mask("00000000000");
+    $("#card_number").mask("00000000000000999999");
+    $("#card_cvv").mask("0009");
 
-    </script>
+    const sessionId = '{{session('pagseguro_session_code')}}';
+    const amountTransaction = 2999.00;
+    PagSeguroDirectPayment.setSessionId(sessionId);
 
-    <script src="{{ asset('js/pagseguro/pagseguro_functions.js') }}"></script>
-    <script src="{{ asset('js/pagseguro/pagseguro_events.js') }}"></script>
+    $("#card_number").keyup(function() {
+        if($("#card_number").val().length >= 6) {
+            getBrand(amountTransaction);
+        } else {
+            limpar();
+        }
+    });
+
+    $("#enviar").click(function(e) {
+        //e.preventDefault();
+        criptografar();
+        $("#hash").val(PagSeguroDirectPayment.getSenderHash());
+        if($('#encryptedCard').val() != "") {
+            setTimeout( function () { 
+                $("#formPagamento").submit();
+            }, 3000);
+        }
+    });
+});
+</script>
+
+<script src="{{ asset('js/pagseguro/pagseguro_functions.js') }}"></script>
+<script src="{{ asset('js/pagseguro/pagseguro_events.js') }}"></script>
 @endsection

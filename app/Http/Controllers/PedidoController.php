@@ -3,18 +3,18 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Services\PedidoService;
+use App\Services\PagseguroService;
 use App\Http\Requests\BoletoRequest;
 use App\Http\Requests\CartaoRequest;
 use Illuminate\Support\Facades\Storage;
 
 class PedidoController extends Controller
 {
-    protected $pedidoService;
+    protected $pagseguroService;
 
-    public function __construct(PedidoService $pedidoService)
+    public function __construct(PagseguroService $pagseguroService)
     {
-        $this->pedidoService = $pedidoService;
+        $this->pagseguroService = $pagseguroService;
     }
 
     public function exibirBoleto()
@@ -36,7 +36,7 @@ class PedidoController extends Controller
     public function processarBoleto(BoletoRequest $request)
     {
         $dadosPedido = $request->validated();
-        $response = $this->pedidoService->efetuarPagamentoBoleto($dadosPedido);
+        $response = $this->pagseguroService->efetuarPagamentoBoleto($dadosPedido);
         $valor = $response->getGrossAmount();
         $id = $response->getCode();
         $link = $response->getPaymentLink();
@@ -46,29 +46,17 @@ class PedidoController extends Controller
     public function processarCartao(CartaoRequest $request)
     {
         $dadosPedido = $request->validated();
-        $response = $this->pedidoService->efetuarPagamentoCartao($dadosPedido);
+        $response = $this->pagseguroService->efetuarPagamentoCartao($dadosPedido);
         // $valor = $response->getGrossAmount();
         // $id = $response->getCode();
         // $link = $response->getPaymentLink();
         dd($response);
     }
 
-    public function makePagSeguroSession()
-    {
-        try {
-            $sessionCode = \PagSeguro\Services\Session::create(
-                \PagSeguro\Configuration\Configure::getAccountCredentials()
-            );
-            session()->put('pagseguro_session_code', $sessionCode->getResult());
-        } catch (Exception $e) {
-            die($e->getMessage());
-        }
-    }
-
     public function receberStatus(Request $request)
     {
         $code = $request->notificationCode;
-        $response = $this->pedidoService->consultaNotificacao();
+        $response = $this->pagseguroService->consultaNotificacao();
         $reference = $response->getReference();
         $valor = $response->getGrossAmount();
         $id = $response->getCode();
